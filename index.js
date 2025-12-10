@@ -24,7 +24,7 @@ app.post("/add-reminder", (req, res) => {
         id: uuidv4(),
         employeeID,
         employeeName,
-       returnDate,
+        returnDate,
         type
     };
 
@@ -38,8 +38,14 @@ app.get("/reminders", (req, res) => {
     res.json(reminders);
 });
 
-// Start Server
-const PORT = 3000;
+// ========== Health Check for Render ==========
+app.get("/", (req, res) => {
+    res.send("Backend is running ✔️");
+});
+
+// ========== Start Server (Render compatible) ==========
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Backend running on http://localhost:${PORT}`);
+    console.log(`Backend running on port ${PORT}`);
 });
