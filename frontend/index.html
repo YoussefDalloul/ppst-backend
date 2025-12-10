@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passport Reminder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="container">
+        <h1>Passport Reminder System</h1>
+
+        <form id="reminderForm">
+            <label>Employee ID</label>
+            <input type="text" id="employeeID" required>
+
+            <label>Employee Name</label>
+            <input type="text" id="employeeName" required>
+
+            <label>Return Date</label>
+            <input type="date" id="returnDate" required>
+
+            <label>Type</label>
+            <select id="type">
+                <option value="Travel">Travel</option>
+                <option value="Personal">Personal</option>
+                <option value="Emergency">Emergency</option>
+            </select>
+
+            <button type="submit">Add Reminder</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
